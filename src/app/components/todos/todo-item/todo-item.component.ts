@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Todo } from 'src/app/models/Todo';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-todo-item',
@@ -12,7 +13,7 @@ export class TodoItemComponent implements OnInit {
   faCheck = faCheck;
   faTimes = faTimes;
 
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +23,6 @@ export class TodoItemComponent implements OnInit {
   }
 
   onDelete(){
-    
+    this.todoService.deleteTodo(this.todo);
   }
 }

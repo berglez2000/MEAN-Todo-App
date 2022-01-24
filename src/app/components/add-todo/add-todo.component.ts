@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from 'src/app/models/Todo';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-add-todo',
@@ -9,13 +10,9 @@ import { Todo } from 'src/app/models/Todo';
 export class AddTodoComponent implements OnInit {
   todo: string = '';
 
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
-  }
-
-  onChange(){
-    console.log(this.todo);
   }
 
   onSubmit(){
@@ -27,5 +24,7 @@ export class AddTodoComponent implements OnInit {
       todo: this.todo,
       completed: false
     }
+
+    this.todoService.addTodo(todo);
   }
 }
