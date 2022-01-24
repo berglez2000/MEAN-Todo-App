@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+$container: 1140px;
+
+@mixin break($width) {
+    @media only screen and (max-width: $width) {
+        @content;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+
+    .container{
+        max-width: $container;
+        width: 100%;
+        margin: 0 auto;
+
+        @include break($container + 40px){
+            padding: 0 40px;
+        }
+
+        @include break(540px){
+            padding: 0 20px;
+        }
+    }
+}

@@ -1,1 +1,6 @@
-<p>add-todo works!</p>
+<div class="add-todo">
+    <form>
+        <input type="text" placeholder="Todo name" name="todo" id="todo" [(ngModel)]="todo" (ngModelChange)="onChange()">
+        <button type="submit" (click)="onSubmit()">Add Todo</button>
+    </form>
+</div>
