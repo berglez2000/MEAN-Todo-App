@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Todo } from 'src/app/models/Todo';
 
 @Component({
   selector: 'app-todos',
@@ -6,6 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
+  todos: Todo[] = [
+    {
+      todo: 'Grocery Store',
+      completed: false
+    },
+    {
+      todo: 'Laundry',
+      completed: false
+    },
+    {
+      todo: 'Homework',
+      completed: true
+    }
+  ];
 
   constructor() { }
 
