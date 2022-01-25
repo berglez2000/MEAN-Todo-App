@@ -3,19 +3,19 @@ import { Observable, Subject } from 'rxjs';
 import { Todo } from '../models/Todo';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TodoService {
   private todoSubject = new Subject<Todo>();
   private addTodoSubject = new Subject<Todo>();
 
-  constructor() { }
+  constructor() {}
 
   deleteTodo(todo: Todo): void {
     this.todoSubject.next(todo);
   }
 
-  onDeleteTodo(): Observable<Todo>{
+  onDeleteTodo(): Observable<Todo> {
     return this.todoSubject.asObservable();
   }
 

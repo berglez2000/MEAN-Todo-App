@@ -5,25 +5,24 @@ import { TodoService } from 'src/app/services/todo.service';
 @Component({
   selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
-  styleUrls: ['./add-todo.component.scss']
+  styleUrls: ['./add-todo.component.scss'],
 })
 export class AddTodoComponent implements OnInit {
   todo: string = '';
 
-  constructor(private todoService: TodoService) { }
+  constructor(private todoService: TodoService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  onSubmit(){
-    if(!this.todo){
+  onSubmit() {
+    if (!this.todo) {
       return;
     }
 
     const todo: Todo = {
       todo: this.todo,
-      completed: false
-    }
+      completed: 'false',
+    };
 
     this.todoService.addTodo(todo);
   }

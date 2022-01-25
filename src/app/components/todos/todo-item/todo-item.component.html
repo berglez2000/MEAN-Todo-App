@@ -1,7 +1,11 @@
-<div class="todo {{ todo.completed ? 'completed' : '' }}">
-    <p>{{ todo.todo }}</p>
-    <div>
-        <button class="complete" (click)="onComplete()"><fa-icon [icon]="faCheck"></fa-icon></button>
-        <button class="delete" (click)="onDelete()"><fa-icon [icon]="faTimes"></fa-icon></button>
-    </div>
+<div class="todo {{ todo.completed == 'true' ? 'completed' : '' }}">
+  <p>{{ todo.todo }}</p>
+  <div>
+    <button class="complete" (click)="onComplete()">
+      <fa-icon [icon]="faCheck"></fa-icon>
+    </button>
+    <button class="delete" (click)="onDelete()">
+      <fa-icon [icon]="faTimes"></fa-icon>
+    </button>
+  </div>
 </div>

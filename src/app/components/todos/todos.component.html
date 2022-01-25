@@ -1,3 +1,4 @@
 <div class="todos">
-    <app-todo-item *ngFor="let todo of todos" [todo]="todo"></app-todo-item>
+  <span *ngIf="todos.length == 0 && !isLoading">Empty Todo List</span>
+  <app-todo-item *ngFor="let todo of todos" [todo]="todo"></app-todo-item>
 </div>

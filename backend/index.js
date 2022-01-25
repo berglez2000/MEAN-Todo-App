@@ -1,6 +1,7 @@
 const express = require("express");
 const mongose = require("mongoose");
 const app = express();
+const cors = require("cors");
 
 // Import Routes
 const todoRoutes = require("./routes/todos");
@@ -11,6 +12,9 @@ const port = process.env.port || 5000;
 mongose.connect("mongodb://localhost:27017/todo-app", () => {
   console.log("Connected to DB");
 });
+
+// Cors Policy
+app.use(cors());
 
 // Body parser
 app.use(express.urlencoded({ extended: true }));
